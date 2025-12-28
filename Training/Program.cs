@@ -61,7 +61,7 @@
             var q1 = kungfus.Where(k => k.Category == "轻功");
             foreach (var k in q1)
             {
-                Console.WriteLine($"武功名称: {k.Name} ({k.School})");
+                Console.WriteLine($"Q1 : 武功名称: {k.Name} ({k.School})");
             }
             Console.WriteLine("==================================================================");
 
@@ -70,7 +70,7 @@
             var q2 = kungfus.OrderByDescending(e => e.Power).Skip(3);
             foreach (var k in q2)
             {
-                Console.WriteLine($"武功名称: {k.Name}(威力: {k.Power})");
+                Console.WriteLine($"Q2 : 武功名称: {k.Name}(威力: {k.Power})");
             }
             Console.WriteLine("==================================================================");
 
@@ -78,7 +78,7 @@
             var q3 = kungfus.Where(k => k.Category == "内功");
             foreach (var k in q3)
             {
-                Console.WriteLine($"武功名称：{k.Name}({k.Difficulty}*)");
+                Console.WriteLine($"Q3 : 武功名称：{k.Name}({k.Difficulty}*)");
             }
             Console.WriteLine("==================================================================");
 
@@ -86,7 +86,7 @@
             var q4 = kungfus.Select(k => new { k.Name, Ratio = (double)k.Power / k.Defense }).Take(5);
             foreach (var item in q4)
             {
-                Console.WriteLine($"武功名称：{item.Name}: {item.Ratio:F2}");
+                Console.WriteLine($"Q4 : 武功名称：{item.Name}: {item.Ratio:F2}");
             }
             Console.WriteLine("==================================================================");
 
@@ -94,7 +94,7 @@
             var q5 = kungfus.OrderByDescending(k => k.Power).Take(5);
             foreach (var k in q5)
             {
-                Console.WriteLine($"武功名称：{k.Name} (威力: {k.Power})");
+                Console.WriteLine($"Q5 : 武功名称：{k.Name} (威力: {k.Power})");
             }
             Console.WriteLine("==================================================================");
 
@@ -102,24 +102,24 @@
             var q6 = kungfus.OrderByDescending(k => k.Difficulty).Take(3);
             foreach (var k in q6)
             {
-                Console.WriteLine($"武功名称： {k.Name}(难度: {k.Difficulty})");
+                Console.WriteLine($"Q6 : 武功名称： {k.Name}(难度: {k.Difficulty})");
             }
             Console.WriteLine("==================================================================");
 
             // Q7 : 找到第一本剑法
             var q7 = kungfus.First(k => k.Category == "剑法");
-            Console.WriteLine($"武功名称：{q7.Name}({q7.School})");
+            Console.WriteLine($"Q7 : 武功名称：{q7.Name}({q7.School})");
             Console.WriteLine("==================================================================");
 
 
             // Q8 : 找到最后一套暗器
             var q8 = kungfus.Last(k => k.Category == "暗器");
-            Console.WriteLine($"武功名称： {q8.Name}(门派: {q8.School})");
+            Console.WriteLine($"Q8 : 武功名称： {q8.Name}(门派: {q8.School})");
             Console.WriteLine("==================================================================");
 
             // Q9 : 找到唯一《九阳真经》
             var q9 = kungfus.Single(k => k.Name == "九阳真经");
-            Console.WriteLine($"武功名称： {q9.Name}({q9.School})");
+            Console.WriteLine($"Q9 : 武功名称： {q9.Name}({q9.School})");
             Console.WriteLine("==================================================================");
 
             // Q10 : 所有武功威力都>50吗？
@@ -135,17 +135,17 @@
             // Q12 : 内力消耗/难度  比值最高的秘籍
             var q12 = kungfus.OrderByDescending(e => (double)e.Defense / e.Difficulty).First();
             var ratio = (double)q12.Defense / q12.Difficulty;
-            Console.WriteLine($"武功名称：{q12.Name} (ratio = {ratio:F2}, internal = {q12.Defense}, difficulty = {q12.Difficulty})");
+            Console.WriteLine($"Q12 : 武功名称：{q12.Name} (ratio = {ratio:F2}, internal = {q12.Defense}, difficulty = {q12.Difficulty})");
             Console.WriteLine("==================================================================");
 
             // Q13 : 威力最高的秘籍
             var q13 = kungfus.MaxBy(e => e.Power);
-            Console.WriteLine($"武功名称：{q13?.Name} (Power = {q13?.Power})");
+            Console.WriteLine($"Q13 : 武功名称：{q13?.Name} (Power = {q13?.Power})");
             Console.WriteLine("==================================================================");
 
             // Q14 : 难度最低的秘籍
             var q14 = kungfus.MinBy(e => e.Difficulty);
-            Console.WriteLine($"武功名称： {q14?.Name} (难度: {q14?.Difficulty})");
+            Console.WriteLine($"Q14 : 武功名称： {q14?.Name} (难度: {q14?.Difficulty})");
             Console.WriteLine("==================================================================");
 
             // Q15 : 少林和武当的武功列表相等吗？
@@ -176,7 +176,7 @@
             var q18 = kungfus.Where(k => k.Name.Contains("剑"));
             foreach (var k in q18)
             {
-                Console.WriteLine($"武功名称：{k.Name} ({k.School})");
+                Console.WriteLine($"Q18 : 武功名称：{k.Name} ({k.School})");
 
             }
             Console.WriteLine("==================================================================");
